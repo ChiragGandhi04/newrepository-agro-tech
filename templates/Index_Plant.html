@@ -1,0 +1,27 @@
+<!--{% extends "import.html" %} -->
+{% block content %}
+
+<center>
+    <br>
+    <h2>Plant Disease Classification Using Deep Learning</h2>
+    <br>
+
+    <!-- Form for file upload -->
+    <form id="upload-file" method="POST" enctype="multipart/form-data" action="/predict_disease">
+        <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg" required>
+        <br><br>
+        <button type="submit" class="btn btn-info btn-lg" id="btn-predict">Predict!</button>
+    </form>
+
+    <br>
+    <!-- Section for result -->
+    {% if result %}
+        <div id="result">
+            <h3>Prediction Result:</h3>
+            <span>{{result}} </span>
+        </div>
+    {% endif %}
+
+</center>
+<br><br>
+{% endblock %}
